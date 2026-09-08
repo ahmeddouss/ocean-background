@@ -22,8 +22,8 @@ export function HomeOceanBackground({
     maskImage: `linear-gradient(to bottom, #000 ${lightConfig.maskFadeStart}%, transparent 100%)`,
   } satisfies CSSProperties;
   const darkMaskStyle = {
-    WebkitMaskImage: "linear-gradient(to bottom, #000 72%, transparent 100%)",
-    maskImage: "linear-gradient(to bottom, #000 72%, transparent 100%)",
+    WebkitMaskImage: "linear-gradient(to bottom, #000 72%, transparent 95%)",
+    maskImage: "linear-gradient(to bottom, #000 72%, transparent 95%)",
   } satisfies CSSProperties;
 
   return (
