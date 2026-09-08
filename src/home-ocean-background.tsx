@@ -8,6 +8,13 @@ import {
 import { cn } from "./utils";
 import type { CSSProperties } from "react";
 
+// Ease both ends of the fade so the gradient has no abrupt slope changes.
+const darkMaskImage = `linear-gradient(to bottom, ${Array.from({ length: 17 }, (_, index) => {
+  const progress = index / 16;
+  const opacity = 1 - progress * progress * (3 - 2 * progress);
+  return `rgba(0, 0, 0, ${opacity}) ${68 + progress * 27}%`;
+}).join(", ")})`;
+
 export function HomeOceanBackground({
   className,
   configurable = false,
@@ -22,8 +29,8 @@ export function HomeOceanBackground({
     maskImage: `linear-gradient(to bottom, #000 ${lightConfig.maskFadeStart}%, transparent 100%)`,
   } satisfies CSSProperties;
   const darkMaskStyle = {
-    WebkitMaskImage: "linear-gradient(to bottom, #000 72%, transparent 95%)",
-    maskImage: "linear-gradient(to bottom, #000 72%, transparent 95%)",
+    WebkitMaskImage: darkMaskImage,
+    maskImage: darkMaskImage,
   } satisfies CSSProperties;
 
   return (
