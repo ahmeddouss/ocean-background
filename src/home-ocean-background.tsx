@@ -52,11 +52,13 @@ export function HomeOceanBackground({
             tuning={lightConfig}
           />
         </div>
+        {/* Keep the fade in page coordinates while rotating only the ocean. */}
         <div
-          className="relative hidden h-full rotate-180 overflow-hidden dark:block"
+          className="relative hidden h-full overflow-hidden dark:block"
           style={darkMaskStyle}
         >
           <OceanBackground
+            className="rotate-180"
             ambient
             grain
             inverted
